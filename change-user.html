@@ -24,11 +24,11 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="affichage-users.html">Affichier users</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="add-user.html">Add user</a>
+                    <a class="dropdown-item" href="add-user.html">Ajouter un utilisateur</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="change-user.html">Change user</a>
+                    <a class="dropdown-item" href="change-user.html">Modifier un utilisateur</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="del-user.html">Suprimer user</a>
+                    <a class="dropdown-item" href="del-user.html">Supprimer un utilisateur</a>
                 </div>
             </li>
         </ul>
@@ -36,10 +36,37 @@
     </header>
     <h1>Change</h1>
     <main>
-        <section>
-            <button id="btn-change"></button>
+        <section style="text-align: center;">
+            <label for="id">ID*</label>
+            <input type="number" name="id" id="id" placeholder="ID">
+            <label for="nom">Nom</label>
+            <input type="text" placeholder="Nom" id="nom">
+            <label for="prenom">Prenom</label>
+            <input type="text" placeholder="Prenom" id="prenom">
+            <label for="email">Email</label>
+            <input type="email" placeholder="Email" id="email">
         </section>
-        <section></section>
+        <br>
+        <section style="text-align: center;">
+            <button id="btn-change">Modifier user</button>
+            <br><br>
+            <button id="btn-afficher">Affichier le list de ussers</button>
+
+            <div class="table-responsive">
+                <table class="table table-primary">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Prenom</th>
+                            <th scope="col">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody id="t-body">
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 
     <footer></footer>

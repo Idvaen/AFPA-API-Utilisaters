@@ -24,11 +24,11 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="affichage-users.html">Affichier users</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="add-user.html">Add user</a>
+                    <a class="dropdown-item" href="add-user.html">Ajouter un utilisateur</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="change-user.html">Change user</a>
+                    <a class="dropdown-item" href="change-user.html">Modifier un utilisateur</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="del-user.html">Suprimer user</a>
+                    <a class="dropdown-item" href="del-user.html">Supprimer un utilisateur</a>
                 </div>
             </li>
         </ul>
@@ -48,6 +48,25 @@
             <br>
             <br>
             <button id="btn-add">Ajouter</button>
+        </section>
+        <br>
+        <section style="text-align: center;">
+            <button id="btn-afficher">Affichier le list de ussers</button>
+
+            <div class="table-responsive">
+                <table class="table table-primary">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Prenom</th>
+                            <th scope="col">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody id="t-body">
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 
