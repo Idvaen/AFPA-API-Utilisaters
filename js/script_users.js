@@ -1,16 +1,25 @@
     "use strict";
 
+  
     let affiche_btn = document.getElementById("btn-afficher");
-    affiche_btn.addEventListener("click", getListUsers);
+    if (affiche_btn) {
+        affiche_btn.addEventListener("click", getListUsers);
+    }
 
     let add_btn = document.getElementById("btn-add");
-    add_btn.addEventListener("click", addUser);
+    if (add_btn) {
+        add_btn.addEventListener("click", addUser);
+    }
 
-    // let change_btn = document.getElementById("btn-change");
-    // change_btn.addEventListener("click", changeUser);
+    let change_btn = document.getElementById("btn-change");
+    if (change_btn) {
+        change_btn.addEventListener("click", changeUser);
+    }
 
-    // let del_btn = document.getElementById("btn-del");
-    // del_btn.addEventListener("click", delUser);
+    let del_btn = document.getElementById("btn-del");
+    if (del_btn) {
+        del_btn.addEventListener("click", delUser);
+    }
 
     let affiche_table = document.getElementById("t-body");
     let id_input = document.getElementById("id");
@@ -18,12 +27,6 @@
     let prenom_input = document.getElementById("prenom");
     let email_input = document.getElementById("email");
 
-    // let add_user = {
-    //     "id": id_input.value,
-    //     "nom": nom_input.value,
-    //     "prenom": prenom_input.value,
-    //     "email": email_input.value
-    // };
 
     const URL = "http://fbrc.esy.es/DWWM22053/Api/api.php/users";
 
@@ -66,7 +69,12 @@
     function addUser() {
         let requestOptions = {
             method: "POST",
-            body: JSON.stringify(add_user)
+            body: JSON.stringify({
+                id: parseInt(id_input.value),
+                nom: nom_input.value,
+                prenom: prenom_input.value,
+                email: email_input.value
+            })
         };
 
         fetch(URL, requestOptions)
