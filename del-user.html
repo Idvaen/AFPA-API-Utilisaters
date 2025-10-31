@@ -37,9 +37,24 @@
     <h1>DEL</h1>
     <main>
         <section>
-            <button id="btn-del"></button>
+            <button id="btn-afficher">Affichier le list de ussers pour supprimer</button>
+            <input type="number" name="btn-del" id="inp-del">
+            <button id="btn-del">Supprimer</button>
+            <div class="table-responsive">
+                <table class="table table-primary">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Prenom</th>
+                            <th scope="col">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody id="t-body">
+                    </tbody>
+                </table>
+            </div>
         </section>
-        <section></section>
     </main>
 
     <footer></footer>

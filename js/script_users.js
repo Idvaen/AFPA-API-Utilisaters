@@ -1,5 +1,6 @@
     "use strict";
 
+const URL = "http://fbrc.esy.es/DWWM22053/Api/api.php/users";
   
     let affiche_btn = document.getElementById("btn-afficher");
     if (affiche_btn) {
@@ -21,35 +22,18 @@
         del_btn.addEventListener("click", delUser);
     }
 
+    let del_input_id = document.getElementById("inp-del");
     let affiche_table = document.getElementById("t-body");
     let id_input = document.getElementById("id");
     let nom_input = document.getElementById("nom");
     let prenom_input = document.getElementById("prenom");
     let email_input = document.getElementById("email");
 
-
-    const URL = "http://fbrc.esy.es/DWWM22053/Api/api.php/users";
-
-    // getListUsers(URL);
-
-    // const USER = {
-    //     id: "20",
-    //     nom: "Ivan",
-    //     prenom: "Den",
-    //     email: "iva@den.com"
-    // };
-
-    // addUser(URL, USER);
-    // getListUsers(URL);
-
-
-
     // MES FONCTIONS -------------------------
     function getListUsers() {
         let requestOptions = {
             method: "GET" // par défaut
         };
-        
         
         fetch(URL, requestOptions)
             .then((response) => response.json())
@@ -89,22 +73,28 @@
             });
     }
     
+    
+    // SUPPRIME UN user
 
-    // SUPPRIME UNE user
-//     let requestOptions = {
-//         method: "DELETE",
-//     };
+    function delUser() {
+        affiche_table.innerHTML = ""
+        let requestOptions = {
+            method: "DELETE",
+        };
 
-//     fetch(URL + "/", requestOptions)
-//         .then((response) => response.text())
-//         .then((data) => {
-//             console.log("La requête DELETE a abouti avec la réponse JSON : ", data);
-//         })
-//         .catch((error) => {
-//             console.log("La requête DELETE a échoué : ", error);
-//         });
+        // fetch(URL + "/", requestOptions)
+        fetch(URL + "/" + del_input_id.value, requestOptions)
+            .then((response) => response.json())
+            .then((data) => {
+                console.log("La requête DELETE a abouti avec la réponse JSON : ", data);
+                del_input_id.value = "";
+                getListUsers();
+            })
+            .catch((error) => {
+                console.log("La requête DELETE a échoué : ", error);
+            });
 
-// getListUsers(URL);
+    }
 
 
     // MODIFIE UNE user
